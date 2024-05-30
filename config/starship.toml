@@ -107,7 +107,7 @@ format = '([\[$all_status$ahead_behind\] ]($style))'
 style = 'fg:#e9f2ff bg:#3c699a'
 
 [custom.docker]
-command = "docker compose $(ls docker-compose*.yml | sed 's/^/-f /') ps -a --format json | jq -r '.[0].State // \"not created\"'"
+command = "docker compose $(ls docker-compose*.yml | sed 's/^/-f /') ps -a --format json | jq -s -r 'if . == [] then \"uncreated\" elif .[0] | type == \"array\" then .[0][0].State? // \"uncreated\" else .[0].State? // \"uncreated\" end'"
 detect_files = ['docker-compose.yml']
 format = '[ $symbol ($output )]($style)'
 style = 'fg:#0db7ed bg:#31486e'
