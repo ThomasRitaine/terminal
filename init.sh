@@ -1,12 +1,15 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Get the directory of the script
 SCRIPT_DIR="${0:A:h}"
 
-# Load bash_aliases
-source "$SCRIPT_DIR/.aliases"
-
 source "$SCRIPT_DIR/utils/distro.sh"
+
+if [[ "$DISTRO" == "nixos" ]]; then
+  source "$SCRIPT_DIR/keybindings/nixos.sh"
+fi
+
+source "$SCRIPT_DIR/.aliases"
 
 # Add Starship
 export STARSHIP_CONFIG="$SCRIPT_DIR/config/starship.toml"

@@ -1,10 +1,12 @@
-#!/bin/bash
+#!/bin/zsh
 
 # find out which distribution we are running on
 if [[ $(find /etc -maxdepth 1 -type f -name "*-release" | wc -l) -gt 0 ]]; then
   _distro=$(awk '/^ID=/' /etc/*-release | awk -F'=' '{ print tolower($2) }')
 elif [[ -f "/System/Library/CoreServices/SystemVersion.plist" ]]; then
   _distro="macos"
+elif [[ -f "/etc/os-release" ]]; then
+  _distro=$(awk '/^ID=/' /etc/os-release | awk -F'=' '{ print tolower($2) }')
 fi
 
 # set an icon based on the distro
@@ -35,4 +37,5 @@ case $_distro in
     *)                       ICON="";;
 esac
 
-export STARSHIP_DISTRO="$ICON"
+export DISTRO="$_distro"
+export DISTRO_ICON="$ICON"
