@@ -6,7 +6,7 @@
 
 format = """
 [╭─◀](#a3aed2)\
-    [ ${env_var.STARSHIP_DISTRO} ](fg:#000000 bg:#a3aed2)\
+    [ ${env_var.DISTRO_ICON} ](fg:#000000 bg:#a3aed2)\
 [](fg:#a3aed2 bg:#769ff0)\
     $username${custom.user_emoji}\
     ${custom.local_hostname}\
@@ -37,9 +37,9 @@ $line_break\
 command_timeout = 1500
 
 # Shows an icon depending on what distro it is running on
-[env_var.STARSHIP_DISTRO]
+[env_var.DISTRO_ICON]
 format = '$env_value'
-variable = "STARSHIP_DISTRO"
+variable = "DISTRO_ICON"
 
 [custom.user_emoji]
 command = "if [ \"$USER\" = 'thomas' ]; then echo '🐣'; elif [ \"$USER\" = 'root' ]; then echo '👑'; fi"
@@ -48,10 +48,10 @@ style = 'bg:#769ff0'
 when = true
 
 [username]
-format = "[ $user]($style)" # Default is '[$user]($style) in '
-show_always = true 
-style_root = 'fg:#e1eaf8 bg:#769ff0' 
-style_user = 'fg:#e1eaf8 bg:#769ff0' 
+format = "[ $user]($style)"          # Default is '[$user]($style) in '
+show_always = true
+style_root = 'fg:#e1eaf8 bg:#769ff0'
+style_user = 'fg:#e1eaf8 bg:#769ff0'
 
 [custom.local_hostname]
 command = "[ -z \"${SSH_CONNECTION}\" ] && echo 'in '"
@@ -60,10 +60,10 @@ style = 'fg:#e1eaf8 bg:#769ff0'
 when = true
 
 [hostname]
-format = '[ in $ssh_symbol$hostname]($style)' 
-ssh_only = true 
-style = 'fg:#e1eaf8 bg:#769ff0' 
-trim_at = '' # Not to trim SSH hostname on first '.'
+format = '[ in $ssh_symbol$hostname]($style)'
+ssh_only = true
+style = 'fg:#e1eaf8 bg:#769ff0'
+trim_at = ''                                  # Not to trim SSH hostname on first '.'
 
 [directory]
 format = '[ $path ($read_only )]($style)'
@@ -128,10 +128,10 @@ style = 'fg:#4584b6 bg:#2a3e4f'
 symbol = " "
 
 [time]
-disabled = false 
-format = '[  $time ]($style)' 
-style = 'fg:#c8d2e7 bg:#1d2230' 
-time_format = "%R" # Hour:Minute Format
+disabled = false
+format = '[  $time ]($style)'
+style = 'fg:#c8d2e7 bg:#1d2230'
+time_format = "%R"              # Hour:Minute Format
 
 [fill]
 symbol = " "
@@ -140,9 +140,9 @@ symbol = " "
 disabled = false
 
 [cmd_duration]
-format = "⌛$duration" 
-min_time = 1_000 # Show command duration over 1,000 milliseconds (=1 sec)
-show_milliseconds = true 
+format = "⌛$duration"
+min_time = 1_000         # Show command duration over 1,000 milliseconds (=1 sec)
+show_milliseconds = true
 
 [memory_usage]
 disabled = false
