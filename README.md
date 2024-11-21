@@ -134,19 +134,20 @@ This terminal configuration is built upon a foundation of robust, open-source to
 6. **Install Zsh Plugins**: Enhance your shell with additional functionality.
 
    ```sh
+   git clone https://github.com/marlonrichert/zsh-autocomplete ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autocomplete
+   git clone https://github.com/MichaelAquilina/zsh-you-should-use ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/you-should-use
    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-   git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/you-should-use
-   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+   git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
    ```
 
 7. **Configure Plugins**: Update your `.zshrc` file to include the new plugins.
 
    ```sh
    plugins=(
-       aws
-       zsh-autosuggestions
        you-should-use
+       zsh-autosuggestions
        zsh-syntax-highlighting
+       zsh-autocomplete
    )
    ```
 
@@ -270,7 +271,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Thomas Ritaine - [@ai_art_tv](https://twitter.com/ai_art_tv) - thomas@ritaine.com
+Thomas Ritaine - [@ai_art_tv](https://twitter.com/ai_art_tv) - <thomas@ritaine.com>
 
 Project Link: [https://github.com/ThomasRitaine/terminal](https://github.com/ThomasRitaine/terminal)
 
