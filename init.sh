@@ -8,5 +8,5 @@ source "$SCRIPT_DIR/utils/distro.sh"
 source "$SCRIPT_DIR/.aliases"
 
 # Add Starship
-export STARSHIP_CONFIG="$SCRIPT_DIR/config/starship.toml"
+export STARSHIP_CONFIG="$SCRIPT_DIR/starship.toml"
 eval "$(starship init zsh)"

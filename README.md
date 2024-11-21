@@ -224,15 +224,14 @@ Below is an overview of the key directories and files my Terminal project:
 
 ```
 .
-├── config/              # The settings directory for tailoring the terminal to personal preferences.
-│   └── starship.toml    # The Starship prompt settings file to define the terminal's look and feel.
 ├── docs/image           # All images and gif used in that documentation.
 ├── utils/               # Custom utility scripts to extend terminal features.
 │   └── distro.sh        # A script to identify the Linux distribution being used.
 ├── .aliases             # A list of shortcuts for frequently used commands.
-├── init.sh              # The bootstrap script that loads all custom configurations on startup.
 ├── LICENSE              # The MIT License file, specifying open source permissions and limitations.
-└── README.md            # The document you are reading, containing all informations about the project.
+├── README.md            # The document you are reading, containing all informations about the project.
+├── init.sh              # The bootstrap script that loads all custom configurations on startup.
+└── starship.toml    # The Starship prompt settings file to define the terminal's look and feel.
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
